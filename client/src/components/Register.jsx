@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form"
@@ -8,25 +8,25 @@ const Register = () => {
     const [message, setMessage] = useState("");
     // const { registerUser, signInWithGoogle } = useAuth();
     // // console.log(registerUser)
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     watch,
-    //     formState: { errors },
-    // } = useForm()
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm()
 
     // //   register user
 
-    // const onSubmit = async (data) => {
-    //     // console.log(data)
-    //     try {
-    //         await registerUser(data.email, data.password);
-    //         alert("User registered successfully!")
-    //     } catch (error) {
-    //         setMessage("Please provide a valid email and password")
-    //         console.error(error)
-    //     }
-    // }
+    const onSubmit = async (data) => {
+        // console.log(data)
+        // try {
+        //     await registerUser(data.email, data.password);
+        //     alert("User registered successfully!")
+        // } catch (error) {
+        //     setMessage("Please provide a valid email and password")
+        //     console.error(error)
+        // }
+    }
 
     // const handleGoogleSignIn = async () => {
     //     try {
@@ -45,12 +45,12 @@ const Register = () => {
                 <h2 className='text-xl font-semibold mb-4'>Please Register</h2>
 
                 <form
-                // onSubmit={handleSubmit(onSubmit)}
+                onSubmit={handleSubmit(onSubmit)}
                 >
                     <div className='mb-4'>
                         <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor="email">Email</label>
                         <input
-                            // {...register("email", { required: true })}
+                            {...register("email", { required: true })}
                             type="email" name="email" id="email" placeholder='Email Address'
                             className='shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow'
                         />
@@ -58,7 +58,7 @@ const Register = () => {
                     <div className='mb-4'>
                         <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor="password">Password</label>
                         <input
-                            // {...register("password", { required: true })}
+                            {...register("password", { required: true })}
                             type="password" name="password" id="password" placeholder='Password'
                             className='shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow'
                         />
